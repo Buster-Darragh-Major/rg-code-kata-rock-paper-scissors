@@ -20,7 +20,7 @@ public class EngineTests
     [TestCase(PlayChoice.Paper, PlayChoice.Paper, PlayResult.Draw)]
     public void TestStandardEngine(PlayChoice LeftChoice, PlayChoice RightChoice, PlayResult ExpectedResult)
     {
-        new StandardEngine().Play(LeftChoice, RightChoice).Should().Be(ExpectedResult);
+        Engine.CreateStandardEngine().Play(LeftChoice, RightChoice).Should().Be(ExpectedResult);
     }
 
     [TestCase(LizardVulcanPlayChoice.Rock, LizardVulcanPlayChoice.Rock, PlayResult.Draw)]
@@ -55,6 +55,6 @@ public class EngineTests
     public void TestLizardVulcanEngine(
         LizardVulcanPlayChoice LeftChoice, LizardVulcanPlayChoice RightChoice, PlayResult ExpectedResult)
     {
-        new LizardVulcanEngine().Play(LeftChoice, RightChoice).Should().Be(ExpectedResult);
+        Engine.CreateLizardVulcanEngine().Play(LeftChoice, RightChoice).Should().Be(ExpectedResult);
     }
 }
